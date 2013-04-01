@@ -280,6 +280,22 @@
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="mjj-3N-HGD" id="QpA-0G-Dqw"/>
+                        <outletCollection property="cardButtons" destination="Mf9-bq-IzM" id="mKI-Rq-hWO"/>
+                        <outletCollection property="cardButtons" destination="8CZ-Ih-TSW" id="i3Q-8Q-e1b"/>
+                        <outletCollection property="cardButtons" destination="ZIh-5F-Tvj" id="eHS-rt-Iqb"/>
+                        <outletCollection property="cardButtons" destination="Wxb-G9-0TS" id="vFd-OJ-BMl"/>
+                        <outletCollection property="cardButtons" destination="PDA-CK-Vrk" id="swE-Kh-i15"/>
+                        <outletCollection property="cardButtons" destination="NFD-xz-XQj" id="CYn-PM-yz3"/>
+                        <outletCollection property="cardButtons" destination="bd0-Fz-VqX" id="Hhy-yY-WJx"/>
+                        <outletCollection property="cardButtons" destination="2GX-No-LdF" id="feF-0S-KMv"/>
+                        <outletCollection property="cardButtons" destination="lkD-w2-dN0" id="2dD-hy-sfo"/>
+                        <outletCollection property="cardButtons" destination="hb3-I8-B8H" id="s9H-ZA-Rwm"/>
+                        <outletCollection property="cardButtons" destination="37I-bh-GVi" id="EcX-kh-DjP"/>
+                        <outletCollection property="cardButtons" destination="Ja6-WC-rde" id="u4r-Uv-ifN"/>
+                        <outletCollection property="cardButtons" destination="VjE-3l-iqM" id="IGw-E9-yK0"/>
+                        <outletCollection property="cardButtons" destination="BiM-VF-caC" id="SRn-A7-yGG"/>
+                        <outletCollection property="cardButtons" destination="37r-5p-Fzc" id="GFf-1N-Tsy"/>
+                        <outletCollection property="cardButtons" destination="dnf-7C-Und" id="x99-qQ-QBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -292,6 +308,7 @@
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>
