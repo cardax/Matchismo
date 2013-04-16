@@ -18,6 +18,7 @@
 @property  (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *matchingModeCtrl;
+@property (weak, nonatomic) UIImage *cardBack;
 
 @end
 
@@ -26,6 +27,7 @@
 -(CardMatchingGame*)game{
     if (!_game) {
         _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init]];
+        self.cardBack = [UIImage imageNamed:@"card-back.jpg"];
 
     }
     return _game;
@@ -59,9 +61,17 @@
         self.matchingModeCtrl.enabled=YES;
     }
     for (UIButton *cardButton in self.cardButtons) {
+        cardButton.imageEdgeInsets= UIEdgeInsetsMake(5, 5, 5, 5);
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
+        if (!card.isFaceUp) {
+            [cardButton setImage:self.cardBack forState:UIControlStateNormal];
+        } else {
+            [cardButton setImage:nil forState:UIControlStateNormal];
+        }
+
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
+
         cardButton.selected=card.isFaceUp;
         cardButton.enabled=!card.isUnplayable;
         cardButton.alpha=card.isUnplayable ? 0.3 : 1;

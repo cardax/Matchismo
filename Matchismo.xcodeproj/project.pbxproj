@@ -23,6 +23,7 @@
 		E9C45686170985F800012E6E /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C45685170985F800012E6E /* Deck.m */; };
 		E9C4568A1709AE2200012E6E /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C456891709AE2200012E6E /* PlayingCard.m */; };
 		E9C4568D1709B54000012E6E /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4568C1709B54000012E6E /* PlayingCardDeck.m */; };
+		E9E874ED171DA7DA00CFAA68 /* card-back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9E874EC171DA7DA00CFAA68 /* card-back.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		E9C456891709AE2200012E6E /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		E9C4568B1709B54000012E6E /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		E9C4568C1709B54000012E6E /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		E9E874EC171DA7DA00CFAA68 /* card-back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "card-back.jpg"; path = "../../../Desktop/card-back.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		E9C456651709825A00012E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9E874EC171DA7DA00CFAA68 /* card-back.jpg */,
 				E9C4566D1709825A00012E6E /* CardGameAppDelegate.h */,
 				E9C4566E1709825A00012E6E /* CardGameAppDelegate.m */,
 				E9C456661709825A00012E6E /* Matchismo-Info.plist */,
@@ -197,6 +200,7 @@
 				E9C456731709825A00012E6E /* Default@2x.png in Resources */,
 				E9C456751709825A00012E6E /* Default-568h@2x.png in Resources */,
 				E9C456781709825A00012E6E /* MainStoryboard.storyboard in Resources */,
+				E9E874ED171DA7DA00CFAA68 /* card-back.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
