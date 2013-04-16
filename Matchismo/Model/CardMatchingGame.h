@@ -19,4 +19,5 @@
 -(Card *)cardAtIndex:(NSUInteger) index;
 
 @property (nonatomic,readonly)int score;
+@property (nonatomic, readonly)NSString *status;
 @end

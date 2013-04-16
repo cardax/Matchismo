@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property  (strong, nonatomic) CardMatchingGame *game;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *matchingModeCtrl;
+
 @end
 
 @implementation CardGameViewController
@@ -23,6 +26,7 @@
 -(CardMatchingGame*)game{
     if (!_game) {
         _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init]];
+
     }
     return _game;
 }
@@ -34,8 +38,26 @@
     _cardButtons=cardButtons;
     [self updateUI];
 }
+- (IBAction)changeMatchMode:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            self.statusLabel.text=@"Two cards matching mode selected!";
+            break;
+        case 1:
+            self.statusLabel.text=@"Three cards matching mode selected!";
+            break;
+        default:
+            break;
+    }
+}
 
 -(void)updateUI{
+
+    if (self.matchingModeCtrl.enabled && self.flipCount>0) {
+        self.matchingModeCtrl.enabled=NO;
+    } else if (!self.matchingModeCtrl.enabled && self.flipCount==0){
+        self.matchingModeCtrl.enabled=YES;
+    }
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
@@ -45,6 +67,7 @@
         cardButton.alpha=card.isUnplayable ? 0.3 : 1;
     }
     self.scoreLabel.text=[NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.statusLabel.text=self.game.status;
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
@@ -72,7 +95,11 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
     NSLog(@"Flips updated to %d",self.flipCount);
 }
-
+- (IBAction)dealCards:(UIButton *)sender {
+    self.game = [self.game initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init]];
+    self.flipCount=0;
+    [self updateUI];
+}
 
 
 @end

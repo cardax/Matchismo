@@ -11,6 +11,7 @@
 @interface CardMatchingGame ()
 @property (nonatomic,readwrite)int score;
 @property (strong, nonatomic) NSMutableArray *cards; //of Card
+@property (nonatomic,readwrite)NSString *status; //Contains a short sentence describing the game status to be displayed
 
 @end
 
@@ -31,6 +32,8 @@
             }
         }
     }
+    self.score=0;
+    self.status=@"New game! Flip a card!";
     return self;
 }
 -(Card *)cardAtIndex:(NSUInteger)index{
@@ -48,6 +51,7 @@
     if (!card.isUnplayable) {
         if(!card.isFaceUp){
             //see if flipping this card up creates a match
+            self.status = [NSString stringWithFormat:@"Flipped up %@",card.contents];
             for (Card *otherCard in self.cards) {
                 if (otherCard.isFaceUp && !otherCard.isUnplayable) {
                     int matchScore = [card match:@[otherCard]];
@@ -55,9 +59,11 @@
                         otherCard.unplayable=YES;
                         card.unplayable=YES;
                         self.score += matchScore * MATCH_BONUS;
+                        self.status = [NSString stringWithFormat:@"Matched %@ & %@\nfor %d points",card.contents,otherCard.contents,matchScore*MATCH_BONUS];
                     } else {
                         otherCard.faceUp=NO;
                         self.score -= matchScore * MISMATCH_PENALTY;
+                        self.status = [NSString stringWithFormat:@"%@ & %@ don't match!\n%d points penalty!",card.contents,otherCard.contents,matchScore * MISMATCH_PENALTY];
                     }
                 }
             }
