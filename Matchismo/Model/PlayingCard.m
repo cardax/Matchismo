@@ -14,6 +14,13 @@
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
 }
 
+-(NSString*)description{
+    NSString *strFaceUp = self.isFaceUp ? @"Face Up" : @"Face Down";
+    NSString *strPlayable = self.isUnplayable ? @"Unplayable" : @"Playable";
+
+    return [NSString stringWithFormat:@"Card: %@ - %@ - %@",self.contents,strFaceUp,strPlayable];
+}
+
 + (NSArray *)rankStrings{
     return @[@"?",@"A",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"];
 }
@@ -50,11 +57,23 @@
     int score=0;
 
     if (otherCards.count==1) {
-        PlayingCard *otherCard=[otherCards lastObject];
-        if ([otherCard.suit isEqualToString:self.suit]) {
-            score=1;
-        } else if (otherCard.rank==self.rank){
-            score=4;
+        id otherCard=[otherCards lastObject];
+        if ([otherCard isKindOfClass:[PlayingCard class]]){
+            PlayingCard *otherPlayingCard=(PlayingCard *)otherCard;
+            if ([otherPlayingCard.suit isEqualToString:self.suit]) {
+                score=1;
+            } else if (otherPlayingCard.rank==self.rank){
+                score=4;
+            }
+        }
+    }
+    else if (otherCards.count==2){
+        for (PlayingCard *otherCard in otherCards) {
+            if ([otherCard.suit isEqualToString:self.suit]) {
+                score+=1;
+            } else if (otherCard.rank==self.rank){
+                score+=4;
+            }
         }
     }
 

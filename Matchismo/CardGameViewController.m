@@ -24,9 +24,12 @@
 
 @implementation CardGameViewController
 
+#define _2CARDSMATCHING 0
+#define _3CARDSMATCHING 1
+
 -(CardMatchingGame*)game{
     if (!_game) {
-        _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init]];
+        _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init] withMatchingMode:_2CARDSMATCHING];
         self.cardBack = [UIImage imageNamed:@"card-back.jpg"];
 
     }
@@ -41,16 +44,21 @@
     [self updateUI];
 }
 - (IBAction)changeMatchMode:(UISegmentedControl *)sender {
+    NSUInteger selectedMode = -1;
     switch (sender.selectedSegmentIndex) {
-        case 0:
+        case _2CARDSMATCHING:
             self.statusLabel.text=@"Two cards matching mode selected!";
+            selectedMode=_2CARDSMATCHING;
             break;
-        case 1:
+        case _3CARDSMATCHING:
             self.statusLabel.text=@"Three cards matching mode selected!";
+            selectedMode=_3CARDSMATCHING;
             break;
         default:
+
             break;
     }
+    self.game = [self.game initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init] withMatchingMode:selectedMode];
 }
 
 -(void)updateUI{
@@ -106,7 +114,7 @@
     NSLog(@"Flips updated to %d",self.flipCount);
 }
 - (IBAction)dealCards:(UIButton *)sender {
-    self.game = [self.game initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init]];
+    self.game = [self.game initWithCardCount:[self.cardButtons count] usingDeck:[[PlayingCardDeck alloc]init] withMatchingMode:self.game.chosenMatchingMode];
     self.flipCount=0;
     [self updateUI];
 }

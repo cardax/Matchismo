@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E91089EA1709F0D100E712CF /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E91089E91709F0D100E712CF /* CardMatchingGame.m */; };
+		E9C1E7B11764ED8300F1E562 /* card-back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9C1E7B01764ED8300F1E562 /* card-back.jpg */; };
 		E9C4565F1709825A00012E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C4565E1709825A00012E6E /* UIKit.framework */; };
 		E9C456611709825A00012E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C456601709825A00012E6E /* Foundation.framework */; };
 		E9C456631709825A00012E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C456621709825A00012E6E /* CoreGraphics.framework */; };
@@ -23,12 +24,12 @@
 		E9C45686170985F800012E6E /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C45685170985F800012E6E /* Deck.m */; };
 		E9C4568A1709AE2200012E6E /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C456891709AE2200012E6E /* PlayingCard.m */; };
 		E9C4568D1709B54000012E6E /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4568C1709B54000012E6E /* PlayingCardDeck.m */; };
-		E9E874ED171DA7DA00CFAA68 /* card-back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9E874EC171DA7DA00CFAA68 /* card-back.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E91089E81709F0D100E712CF /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		E91089E91709F0D100E712CF /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		E9C1E7B01764ED8300F1E562 /* card-back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "card-back.jpg"; sourceTree = "<group>"; };
 		E9C4565B1709825A00012E6E /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C4565E1709825A00012E6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9C456601709825A00012E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,7 +54,6 @@
 		E9C456891709AE2200012E6E /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		E9C4568B1709B54000012E6E /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		E9C4568C1709B54000012E6E /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
-		E9E874EC171DA7DA00CFAA68 /* card-back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "card-back.jpg"; path = "../../../Desktop/card-back.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		E9C456651709825A00012E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9E874EC171DA7DA00CFAA68 /* card-back.jpg */,
+				E9C1E7B01764ED8300F1E562 /* card-back.jpg */,
 				E9C4566D1709825A00012E6E /* CardGameAppDelegate.h */,
 				E9C4566E1709825A00012E6E /* CardGameAppDelegate.m */,
 				E9C456661709825A00012E6E /* Matchismo-Info.plist */,
@@ -200,7 +200,7 @@
 				E9C456731709825A00012E6E /* Default@2x.png in Resources */,
 				E9C456751709825A00012E6E /* Default-568h@2x.png in Resources */,
 				E9C456781709825A00012E6E /* MainStoryboard.storyboard in Resources */,
-				E9E874ED171DA7DA00CFAA68 /* card-back.jpg in Resources */,
+				E9C1E7B11764ED8300F1E562 /* card-back.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
